@@ -1,0 +1,119 @@
+:root {
+  --bg: #f5f6f8;
+  --card: #ffffff;
+  --text: #1f2933;
+  --muted: #6b7680;
+  --border: #e3e6ea;
+  --primary: #1f6feb;
+  --primary-dark: #1557c0;
+  --danger: #c62828;
+  --success: #2e7d32;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+h1 { font-size: 1.5rem; margin: 0 0 1rem; }
+h2 { font-size: 1.05rem; margin: 0 0 0.75rem; }
+
+.topbar {
+  display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;
+  padding: 0.75rem 1.5rem; background: #111827; color: #fff;
+}
+.topbar .brand { font-weight: 700; }
+.topbar nav { display: flex; gap: 0.25rem; flex-wrap: wrap; }
+.topbar nav a { color: #cbd5e1; text-decoration: none; padding: 0.4rem 0.75rem; border-radius: 6px; }
+.topbar nav a:hover { color: #fff; }
+.topbar nav a.active { background: #374151; color: #fff; }
+
+.container { max-width: 1200px; margin: 0 auto; padding: 1.5rem; }
+
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-bottom: 1rem; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-bottom: 1rem; }
+.cards .card { margin: 0; }
+.stat { display: flex; flex-direction: column; gap: 0.25rem; }
+.stat strong { font-size: 1.6rem; }
+.label { color: var(--muted); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.03em; }
+.grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 1rem; align-items: start; }
+.grid-2 .card { margin: 0; }
+
+.muted { color: var(--muted); }
+.small { font-size: 0.8rem; }
+.danger { color: var(--danger); }
+
+table { width: 100%; border-collapse: collapse; margin-bottom: 1rem; }
+th, td { text-align: left; padding: 0.5rem; border-bottom: 1px solid var(--border); }
+th { font-size: 0.8rem; color: var(--muted); font-weight: 600; text-transform: uppercase; }
+.num { text-align: right; }
+tr.clickable { cursor: pointer; }
+tr.clickable:hover, tr.selected { background: #eef4ff; }
+.row-actions { text-align: right; white-space: nowrap; }
+
+input, select {
+  font: inherit; padding: 0.45rem 0.6rem; border: 1px solid var(--border);
+  border-radius: 6px; background: #fff; width: 100%;
+}
+td input { max-width: 110px; text-align: right; }
+input:focus, select:focus { outline: 2px solid #bfd6ff; border-color: var(--primary); }
+
+label { display: flex; flex-direction: column; gap: 0.3rem; font-size: 0.85rem; color: var(--muted); }
+.form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0.75rem; align-items: end; }
+.form-grid .wide { grid-column: span 2; }
+.form-grid .actions { display: flex; gap: 0.5rem; }
+.supplier { max-width: 400px; margin-bottom: 1rem; }
+.toolbar { margin-bottom: 0.75rem; max-width: 400px; }
+
+.btn {
+  display: inline-block; font: inherit; font-weight: 600; padding: 0.5rem 1rem; border: none;
+  border-radius: 6px; background: var(--primary); color: #fff; cursor: pointer; text-decoration: none;
+}
+.btn:hover { background: var(--primary-dark); }
+.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.btn.secondary { background: #e5e7eb; color: var(--text); }
+button.link { background: none; border: none; color: var(--primary); cursor: pointer; font: inherit; padding: 0.25rem; }
+button.link.danger { color: var(--danger); }
+button.link:disabled { color: var(--muted); cursor: not-allowed; }
+
+.alert { padding: 0.6rem 0.9rem; border-radius: 6px; }
+.alert.error { background: #fdecea; color: var(--danger); }
+.alert.success { background: #e8f5e9; color: var(--success); }
+
+.bars { display: flex; align-items: flex-end; gap: 0.5rem; height: 160px; }
+.bar-col { flex: 1; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; gap: 0.3rem; }
+.bar { width: 100%; min-height: 2px; background: var(--primary); border-radius: 4px 4px 0 0; }
+
+.tabs { display: flex; gap: 0.25rem; margin-bottom: 1rem; }
+.tabs button { font: inherit; padding: 0.4rem 0.9rem; border: 1px solid var(--border); background: #fff; border-radius: 6px; cursor: pointer; }
+.tabs button.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+.badge { font-size: 0.7rem; font-weight: 700; padding: 0.1rem 0.4rem; border-radius: 4px; background: #e0e7ff; color: #3730a3; }
+.badge.sale { background: #dcfce7; color: #166534; }
+
+/* Point of sale */
+.pos { display: grid; grid-template-columns: 2fr 1fr; gap: 1rem; align-items: start; }
+.pos .card { margin: 0; }
+.search { margin-bottom: 1rem; font-size: 1.05rem; }
+.product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 0.6rem; }
+.product-tile {
+  display: flex; flex-direction: column; gap: 0.3rem; text-align: left; font: inherit;
+  padding: 0.8rem; border: 1px solid var(--border); border-radius: 8px; background: #fafbfc; cursor: pointer;
+}
+.product-tile:hover:not(:disabled) { border-color: var(--primary); background: #eef4ff; }
+.product-tile:disabled { opacity: 0.5; cursor: not-allowed; }
+.product-tile .name { font-weight: 600; }
+.product-tile .price { color: var(--primary); font-weight: 700; }
+.cart-line { display: grid; grid-template-columns: 1fr 70px 90px 24px; gap: 0.5rem; align-items: center; padding: 0.4rem 0; border-bottom: 1px solid var(--border); }
+.cart-line input { text-align: right; }
+.totals { margin: 1rem 0; }
+.totals div { display: flex; justify-content: space-between; padding: 0.2rem 0; color: var(--muted); }
+.totals .grand { font-size: 1.4rem; font-weight: 700; color: var(--text); }
+.pay { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+.receipt { margin-top: 1rem; padding: 0.8rem; background: #f8fafc; border: 1px dashed var(--border); border-radius: 6px; font-family: ui-monospace, monospace; font-size: 0.85rem; }
+.receipt-line { display: flex; justify-content: space-between; }
+
+@media (max-width: 800px) {
+  .pos { grid-template-columns: 1fr; }
+  .grid-2 { grid-template-columns: 1fr; }
+  .form-grid .wide { grid-column: auto; }
+}
